@@ -27,7 +27,7 @@ Output: 0
 
 
 
-Constraints:
+Constraints,:/[<
 
     0 <= s.length <= 5 * 104
     s consists of English letters, digits, symbols and spaces.
@@ -38,15 +38,16 @@ def longest_in(s: str) -> int:
     if s == "":
         return 0
 
-    last = s[0]
     longest = 1
 
-    for ch in s[1:]:
-        if ch not in last:
-            last += ch
-            if len(last) > longest:
-                longest = len(last)
-        else:
-            last = ch
+    for n in range(0, len(s)):
+        last = s[n]
+        for ch in s[n + 1:]:
+            if ch not in last:
+                last += ch
+                if len(last) > longest:
+                    longest = len(last)
+            else:
+                last = ch
 
     return longest
