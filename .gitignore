@@ -1,3 +1,7 @@
 /LeetPython/.idea/
 leet_rust/target/
 leet_rust/.idea/
+/.idea/
+/leet-java/.idea/
+*.iml
+/leet-java/target/
